@@ -16,6 +16,7 @@ A collection of Claude Code skills for biomedical and healthcare ML research. Ea
 | [repo-integration](.claude/skills/repo-integration/) | Integrate GitHub repos, HuggingFace models, and MONAI into your project |
 | [clinical-nlp](.claude/skills/clinical-nlp/) | Biomedical NLP with clinical notes, radiology reports, and PubMed text |
 | [paper-research](.claude/skills/paper-research/) | Research papers across PubMed, Semantic Scholar, arXiv, focusing on top venues |
+| [meeting-deck](skills/meeting-deck/) | Build a group meeting .pptx: new results since the last meeting, charts from stored files, every number recomputed, file checks |
 
 ## Setup
 
@@ -132,6 +133,27 @@ Skills trigger automatically based on what you ask Claude.
 "Find which papers have public code for chest X-ray classification"
 "Summarize recent advances in foundation models for pathology"
 ```
+
+### meeting-deck
+
+```
+"Make my deck for Friday's group meeting"
+"Put the new external test results on the deck"
+"Refresh the status slides and check every number on this deck"
+"组会 PPT 帮我做一下"
+```
+
+To install it for all your projects:
+
+```bash
+cp -R skills/meeting-deck ~/.claude/skills/
+```
+
+```bash
+pip install -r ~/.claude/skills/meeting-deck/requirements.txt
+```
+
+On first use, Claude asks for your name, projects, where results live and who will be in the room, then saves them to `settings.md`. The style is a default: tell Claude what you want changed and it records that in `settings.md`, which stays yours when you copy a newer version over it.
 
 ## License
 
